@@ -1,0 +1,112 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de Piernas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('https://p4.wallpaperbetter.com/wallpaper/317/334/429/working-out-exercise-barbell-gyms-wallpaper-preview.jpg'); /* Ruta a tu imagen de fondo */
+            background-size: cover; /* Ajustar la imagen de fondo para cubrir toda la pantalla */
+            background-position: center; /* Centrar la imagen de fondo */
+            background-repeat: no-repeat; /* Evitar que la imagen de fondo se repita */
+            padding: 20px;
+            color: #fff; /* Color de texto blanco */
+            margin: 0; /* Eliminar el margen predeterminado del cuerpo */
+        }
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(50, 50, 50, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        h1 {
+            text-align: center;
+            color: #fff;
+        }
+        form {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button[type="submit"], button[type="button"] {
+            padding: 10px 20px;
+            background-color: #37ad70;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover, button[type="button"]:hover {
+            background-color: #1f6340;
+        }
+        #dateDisplay {
+            margin-top: 10px;
+            color: #888;
+        }
+        .btn {
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            background-color: #37ad70;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #1f6340;
+        }
+        .logo {
+            position: absolute; /* Posición absoluta para que el logo se pueda colocar en la esquina superior izquierda */
+            top: 20px; /* Espacio desde la parte superior */
+            left: 50%; /* Centrar horizontalmente */
+            transform: translateX(-50%); /* Centrar el logo horizontalmente */
+            width: 145px; /* Ancho del logo */
+            height: auto; /* Altura automática para mantener la proporción */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+         <img src="https://seeklogo.com/images/H/health-care-and-fitness-logo-E7D64C603C-seeklogo.com.png" class="logo"> 
+        <h1>Ejercicios de Piernas</h1>
+        <form id="repetitionForm" action="/start_detection_pierna" method="post">
+            <label for="max_repetitions">Número de repeticiones:</label>
+            <input type="number" id="max_repetitions" name="max_repetitions" value="5" min="1" max="100">
+            <button type="submit">Iniciar Detección</button>
+            <button type="button" id="addDateButton">Agregar Fecha</button>
+         <a href="/rutinas" class="btn">Regresar</a>
+            <p id="dateDisplay"></p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('addDateButton').addEventListener('click', function() {
+            var currentDate = new Date().toISOString().slice(0, 10);
+            document.getElementById('dateDisplay').textContent = 'Fecha actual: ' + currentDate;
+        });
+    </script>
+</body>
+</html>

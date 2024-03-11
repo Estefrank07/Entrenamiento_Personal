@@ -1,0 +1,117 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('https://p4.wallpaperbetter.com/wallpaper/317/334/429/working-out-exercise-barbell-gyms-wallpaper-preview.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 20px;
+            color: #fff;
+            margin: 0;
+        }
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(50, 50, 50, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        h1 {
+            color: #fff;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="date"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: #d8ede2; /* Cambiar color de fondo */
+        }
+        input[type="submit"],
+        .btn {
+            background-color: #37ad70;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        input[type="submit"]:hover,
+        .btn:hover {
+            background-color: #1f6340;
+        }
+        p {
+            margin-top: 20px;
+            color: #666;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px; /* Ajustar posición a la esquina superior izquierda */
+            width: 50px;
+            height: auto;
+        }
+        .error-message {
+            color: red;
+            margin-top: 5px;
+        }
+        /* Estilos para el mensaje de éxito */
+        #success-message {
+            display: none;
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://seeklogo.com/images/H/health-care-and-fitness-logo-E7D64C603C-seeklogo.com.png" class="logo"> 
+        <h1>Ingresa tus Datos</h1>
+        <form action='/registro' method='POST' id="registration-form">
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="text" name="apellido" placeholder="Apellido" required>
+            <input type="text" name="correo" placeholder="Correo Electronico" required>
+            <input type="date" name="fecha_nacimiento" placeholder="Fecha de Nacimiento" required>
+            <input type="number" name="edad" placeholder="Edad" required>
+            <input type="number" name="peso" placeholder="Peso (kg)" required>
+            <input type="number" name="altura" placeholder="Altura (cm)" required>
+            <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+
+            
+            <input type="submit" value="Submit" class="btn"> 
+        </form>
+        <a href="/" class="btn">Volver al Inicio</a> 
+
+        <!-- Mensaje de éxito -->
+        <p id="success-message">¡La información se guardó correctamente!</p>
+    </div>
+
+
+</body>
+</html>

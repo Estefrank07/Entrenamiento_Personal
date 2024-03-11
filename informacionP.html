@@ -1,0 +1,217 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información General</title>
+    <style>
+        /* Estilos generales del cuerpo del documento */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('https://p4.wallpaperbetter.com/wallpaper/317/334/429/working-out-exercise-barbell-gyms-wallpaper-preview.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 20px;
+            color: #fff;
+            margin: 0;
+        }
+
+        /* Estilos del contenedor principal */
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 1300px;
+            margin: 0 auto;
+            background-color: rgba(50, 50, 50, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Estilos para el título y el párrafo */
+        h1, p {
+            margin-top: 0;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para el logo */
+        .logo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 70px; /* Tamaño del logo */
+            height: auto;
+        }
+
+        /* Estilos para la galería de imágenes */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Estilos para cada elemento de la galería */
+        .gallery-item {
+            margin: 10px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+            width: 300px;
+        }
+
+        /* Estilos al pasar el mouse sobre cada elemento de la galería */
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Estilos para las imágenes */
+        .image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Estilos al pasar el mouse sobre las imágenes */
+        .image:hover {
+            opacity: 0.7;
+        }
+
+        /* Estilos para la leyenda */
+        .caption {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Estilos al pasar el mouse sobre la leyenda */
+        .gallery-item:hover .caption {
+            opacity: 1;
+        }
+
+        /* Estilos para la visualización de imagen completa */
+        .full-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        /* Estilos para la imagen completa */
+        .full-image img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Estilos para los botones */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #37ad70; /* Color de fondo del botón */
+            color: #fff; /* Color de texto blanco */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra inicial del botón */
+        }
+
+        /* Estilos al pasar el mouse sobre los botones */
+        .btn:hover {
+            background-color: #1f6340; /* Cambio de color al pasar el mouse */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Título principal -->
+        <h1>Antes de empezar</h1>
+        <!-- Contenedor de la galería -->
+          <div class="logo">
+ 		<!-- Contenedor del logo -->
+            <img src="https://seeklogo.com/images/H/health-care-and-fitness-logo-E7D64C603C-seeklogo.com.png" alt="Logo" width="70"> 
+        </div>
+        <div class="gallery">
+            <!-- Primer elemento de la galería -->
+            <div class="gallery-item">
+                <!-- Título de la imagen -->
+                <h2 class="caption">Ejercicios</h2>
+                <!-- Imagen -->
+                <img src="https://www.marathonranking.com/wp-content/uploads/2023/05/ejercicios-para-hacer-en-casa.jpg" class="image" onclick="showFullImage(this.src)">
+                <!-- Texto explicativo -->
+                <div class="text-after">Hacer ejercicio de piernas fortalece los músculos de las piernas, mejora la estabilidad y el equilibrio, aumenta el metabolismo para quemar calorías, beneficia la salud cardiovascular, aumenta la flexibilidad y la movilidad, y reduce el riesgo de lesiones, lo que contribuye al bienestar físico y mental general, A continuación en la imagen puedes observar algunos ejercicios de piernas</div>
+            </div>
+            <!-- Segundo elemento de la galería -->
+            <div class="gallery-item">
+                <!-- Título de la imagen -->
+                <h2 class="caption">Músculos trabajados</h2>
+                <!-- Imagen -->
+                <img src="https://i.pinimg.com/736x/e7/f5/f9/e7f5f92c7ee92f6169fa436efe4bdd6a.jpg" class="image" onclick="showFullImage(this.src)">
+                <!-- Texto explicativo -->
+                <div class="text-after">Los ejercicios de piernas trabajan varios grupos musculares, incluyendo cuádriceps, isquiotibiales, glúteos, pantorrillas y músculos de la cadera. Los cuádriceps en la parte frontal del muslo se activan durante movimientos como las sentadillas y las estocadas, mientras que los isquiotibiales en la parte posterior del muslo se trabajan especialmente durante ejercicios como el peso muerto y las flexiones de piernas. Los glúteos son activados en ejercicios como las sentadillas y el peso muerto, mientras que las pantorrillas se trabajan durante movimientos como el levantamiento de talones. Estos ejercicios no solo fortalecen los músculos de las piernas, sino que también contribuyen a una mejor estabilidad y equilibrio.</div>
+            </div>
+            <!-- Tercer elemento de la galería -->
+            <div class="gallery-item">
+                <!-- Título de la imagen -->
+                <h2 class="caption">Curl de bíceps</h2>
+                <!-- Imagen -->
+                <img src="https://uecluster.blob.core.windows.net/images/correresdevalientes/1486628637_490-3-ejercicios-para-fortalecer-las-piernas.jpg" alt="Curl de bíceps" class="image" onclick="showFullImage(this.src)">
+                <!-- Texto explicativo -->
+                <div class="text-after">Los ángulos necesarios para hacer ejercicio de piernas varían según el ejercicio. Por ejemplo, en las sentadillas, las rodillas se doblan a unos 90 grados, mientras que en estocadas pueden doblarse un poco más. En el peso muerto, las rodillas se mantienen ligeramente flexionadas. Ajustar la técnica es crucial para evitar lesiones y maximizar los beneficios. ¡Y ya sabes cómo empezar a hacer flexiones!</div>
+            </div>
+        </div>
+        <!-- Botones para dirigir a las ventanas de rutinas y comenzar ejercicio -->
+        <a href="/rutinas" class="btn">Atras</a>
+        <a href="/videoPiernas" class="btn">Comenzar Ejercicio</a>
+    </div>
+
+    <!-- Contenedor para visualización de imagen completa -->
+    <div class="full-image" onclick="hideFullImage()">
+        <!-- Imagen completa -->
+        <img id="full-img" src="" alt="Full Image">
+    </div>
+
+    <!-- Script para mostrar y ocultar imagen completa -->
+    <script>
+        function showFullImage(src) {
+            document.getElementById('full-img').src = src;
+            document.querySelector('.full-image').style.display = 'flex';
+            setTimeout(function() {
+                document.querySelector('.full-image').style.opacity = '1';
+            }, 100);
+        }
+
+        function hideFullImage() {
+            document.querySelector('.full-image').style.opacity = '0';
+            setTimeout(function() {
+                document.querySelector('.full-image').style.display = 'none';
+            }, 300);
+        }
+    </script>
+</body>
+</html>	

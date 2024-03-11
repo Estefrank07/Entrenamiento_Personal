@@ -1,0 +1,95 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('https://p4.wallpaperbetter.com/wallpaper/317/334/429/working-out-exercise-barbell-gyms-wallpaper-preview.jpg'); /* Ruta a tu imagen de fondo */
+            background-size: cover; /* Ajustar la imagen de fondo para cubrir toda la pantalla */
+            background-position: center; /* Centrar la imagen de fondo */
+            background-repeat: no-repeat; /* Evitar que la imagen de fondo se repita */
+            padding: 20px;
+            color: #fff; /* Color de texto blanco */
+            margin: 0; /* Eliminar el margen predeterminado del cuerpo */
+        }
+        .container {
+            position: relative; /* Posición relativa para que los elementos absolutos estén posicionados en relación con este contenedor */
+            width: 90%; /* Ancho del contenedor del 90% del ancho de la pantalla */
+            max-width: 600px; /* Ancho máximo del contenedor */
+            margin: 0 auto; /* Centrar horizontalmente */
+            background-color: rgba(50, 50, 50, 0.9); /* Fondo del contenedor con opacidad */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra del contenedor */
+            min-height: 100vh; /* Establecer altura mínima del contenedor como 100% del viewport height */
+            display: flex; /* Utilizar flexbox para centrar verticalmente */
+            flex-direction: column; /* Dirección de los elementos como columna */
+            justify-content: center; /* Centrar verticalmente los elementos */
+        }
+        h1 {
+            color: #fff;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #37ad70;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #1f6340;
+        }
+        p {
+            margin-top: 20px;
+            color: #666;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            background-color: #37ad70; /* Cambiar el color de fondo del botón */
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 10px; /* Agregar espacio superior */
+        }
+        a:hover {
+            background-color: #1f6340; /* Cambiar el color de fondo del botón al pasar el mouse */
+        }
+        .logo {
+            position: absolute; /* Posición absoluta para que el logo se pueda colocar en la esquina superior izquierda */
+            top: 20px; /* Espacio desde la parte superior */
+            left: 50%; /* Centrar horizontalmente */
+            transform: translateX(-50%); /* Centrar el logo horizontalmente */
+            width: 145px; /* Ancho del logo */
+            height: auto; /* Altura automática para mantener la proporción */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://seeklogo.com/images/H/health-care-and-fitness-logo-E7D64C603C-seeklogo.com.png" class="logo"> 
+        <h1>Iniciar Sesión</h1>
+        <form action="/login" method="post">
+             <input type="text" name="correo" placeholder="Correo electrónico" required>
+    <input type="password" name="contrasena" placeholder="Contraseña" required>
+    <input type="submit" value="Iniciar Sesión">
+        </form>
+        <a href="/">Volver al Inicio</a> 
+    </div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repeticiones de Brazos</title>
+    <!-- Estilos CSS para mejorar el diseño -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('https://p4.wallpaperbetter.com/wallpaper/317/334/429/working-out-exercise-barbell-gyms-wallpaper-preview.jpg'); /* Ruta a tu imagen de fondo */
+            background-size: cover; /* Ajustar la imagen de fondo para cubrir toda la pantalla */
+            background-position: center; /* Centrar la imagen de fondo */
+            background-repeat: no-repeat; /* Evitar que la imagen de fondo se repita */
+            padding: 20px;
+            color: #fff; /* Color de texto blanco */
+            margin: 0; /* Eliminar el margen predeterminado del cuerpo */
+        }
+        .container {
+           position: relative;
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(50, 50, 50, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        th {
+            background-color: #37ad70;
+            text-transform: uppercase;
+        }
+        td {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .btn-container {
+            margin-top: 40px;
+        }
+        .btn {
+            padding: 15px 40px;
+            background-color: #37ad70;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #1f6340;
+        }
+        .logo {
+            position: absolute;
+            top: 40px;
+            left: 30px; /* Ajustar posición a la esquina superior izquierda */
+            width: 40px;
+            height: auto;
+        }
+        #average-tab {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://seeklogo.com/images/H/health-care-and-fitness-logo-E7D64C603C-seeklogo.com.png" class="logo"> 
+        <h1>Repeticiones de Brazos</h1>
+        {% if repeticiones %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Número de Repeticiones</th>
+                    </tr>
+                </thead>
+                <tbody id="repeticiones-body">
+                    {% for repeticion in repeticiones %}
+                        <tr>
+                            <td>{{ repeticion.fecha }}</td>
+                            <td>{{ repeticion.numero_repeticiones }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No hay datos de repeticiones disponibles.</p>
+        {% endif %}
+        <div id="average-tab">
+            <p>Numero máximo de repeticiones realizadas: <span id="average-value">0%</span></p>
+            <p>Total de repeticiones: <span id="total-value">0</span></p>
+        </div>
+        <div class="btn-container">
+            <a href="/rutinas" class="btn">Regresar al menú principal</a>
+        </div>
+    </div>
+
+    <script>
+ function actualizarPromedioYTotal() {
+    // Obtenemos todas las repeticiones
+    const repeticiones = document.querySelectorAll('#repeticiones-body td:nth-child(2)');
+    let totalRepeticiones = 0;
+    let maxRepeticiones = 0;
+
+    // Recorremos todas las repeticiones para encontrar el número mayor
+    repeticiones.forEach(repeticion => {
+        const numeroRepeticiones = parseInt(repeticion.textContent);
+        if (!isNaN(numeroRepeticiones)) {
+            totalRepeticiones += numeroRepeticiones;
+            maxRepeticiones = Math.max(maxRepeticiones, numeroRepeticiones);
+        }
+    });
+
+    // Mostramos el número mayor en la pestaña
+    document.getElementById('average-value').textContent = maxRepeticiones;
+
+    // Mostramos el total de repeticiones
+    document.getElementById('total-value').textContent = totalRepeticiones;
+}
+
+// Llamamos a la función inicialmente para calcular el número mayor y el total
+actualizarPromedioYTotal();
+
+// Agregamos un listener para detectar cambios en la tabla y actualizar el número mayor y el total
+const observer = new MutationObserver(actualizarPromedioYTotal);
+const tabla = document.getElementById('repeticiones-body');
+observer.observe(tabla, { childList: true });
+    </script>
+</body>
+</html>
